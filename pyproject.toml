@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "informer"
+version = "1.0.0"
+description = "fork https://github.com/zhouhaoyi/Informer2020"
+authors = ["hjs <hjs9987@outlook.com>"]
+license = "Apache-2.0 license"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = { version = "^2.4.1+cu118", source = "torch" }
+numpy = "<2.0.0"
+matplotlib = "^3.9.2"
+pandas = "^2.2.2"
+scikit-learn = "^1.5.1"
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^4.2.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "supplemental"
+
+[[tool.poetry.source]]
+name = "tencent"
+priority = "primary"
+url = "https://mirrors.cloud.tencent.com/pypi/simple"
+
+[tool.poetry.scripts]
+hello = 'tests.hello:say_hello'
+
